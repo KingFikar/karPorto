@@ -371,15 +371,22 @@ button, input, textarea {
 /* ====================================================
    6. HERO
    ==================================================== */
-.hero {
+.hero,
+.about,
+.contact {
   position: relative;
-  padding-top: calc(64px + var(--s-7));
-  padding-bottom: var(--s-9);
   overflow: hidden;
 }
 
-/* Hero grid background pattern */
-.hero::before {
+.hero {
+  padding-top: calc(64px + var(--s-7));
+  padding-bottom: var(--s-9);
+}
+
+/* Hero, About & Contact grid background pattern */
+.hero::before,
+.about::before,
+.contact::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -388,14 +395,37 @@ button, input, textarea {
     linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1.5px, transparent 1.5px);
   background-size: 48px 48px;
   background-position: -1px -1px;
-  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, #000 20%, transparent 90%);
-          mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, #000 20%, transparent 90%);
+  -webkit-mask-composite: source-in;
+          mask-composite: intersect;
   z-index: 0;
   pointer-events: none;
 }
 
+/* Hero: bottom fade only (top is at page edge) */
+.hero::before {
+  -webkit-mask-image:
+    radial-gradient(ellipse 90% 80% at 50% 40%, #000 25%, transparent 80%),
+    linear-gradient(to bottom, #000 55%, transparent 100%);
+          mask-image:
+    radial-gradient(ellipse 90% 80% at 50% 40%, #000 25%, transparent 80%),
+    linear-gradient(to bottom, #000 55%, transparent 100%);
+}
+
+/* About: top fade AND bottom fade (sandwiched between sections) */
+.about::before,
+.contact::before {
+  -webkit-mask-image:
+    radial-gradient(ellipse 90% 80% at 50% 50%, #000 25%, transparent 80%),
+    linear-gradient(to bottom, transparent 0%, #000 45%, #000 55%, transparent 100%);
+          mask-image:
+    radial-gradient(ellipse 90% 80% at 50% 50%, #000 25%, transparent 80%),
+    linear-gradient(to bottom, transparent 0%, #000 45%, #000 55%, transparent 100%);
+}
+
 /* Subtle accent glow at center */
-.hero > .container::before {
+.hero > .container::before,
+.about > .container::before,
+.contact > .container::before {
   content: "";
   position: absolute;
   top: 30%;
@@ -410,7 +440,9 @@ button, input, textarea {
   opacity: 0.7;
 }
 
-.hero .container {
+.hero .container,
+.about .container,
+.contact .container {
   position: relative;
   z-index: 1;
 }
