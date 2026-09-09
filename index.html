@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Julfikar — Fullstack developer & product engineer based in Mataram, Indonesia." />
+    <meta name="description" content="Julfikar &middot; Fullstack Web & Mobile Developer specializing in Laravel, Flutter, and modern web technologies." />
 
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
@@ -14,7 +14,7 @@
       rel="stylesheet"
     />
 
-    <title>Julfikar — Fullstack Developer</title>
+    <title>Julfikar &middot; Fullstack Web & Mobile Developer</title>
   </head>
   <body>
     <!-- Scroll progress -->
@@ -30,9 +30,12 @@
 
         <nav class="nav" id="nav" aria-label="Primary">
           <ul class="nav__list">
-            <li><a href="#work" class="nav__link">Work</a></li>
+            <li><a href="#home" class="nav__link">Home</a></li>
             <li><a href="#about" class="nav__link">About</a></li>
             <li><a href="#skills" class="nav__link">Skills</a></li>
+            <li><a href="#experience" class="nav__link">Experience</a></li>
+            <li><a href="#projects" class="nav__link">Projects</a></li>
+            <li><a href="#education" class="nav__link">Education</a></li>
             <li><a href="#contact" class="nav__link">Contact</a></li>
           </ul>
         </nav>
@@ -51,46 +54,49 @@
     </header>
 
     <main>
-      <!-- Hero -->
+      <!-- =============================================
+           HERO
+           ============================================= -->
       <section class="hero" id="home">
         <div class="container hero__grid">
           <div class="hero__content" data-reveal>
             <span class="hero__badge">
               <span class="hero__badge-dot"></span>
-              Open to projects · 2026
+              Open to work &middot; 2026
             </span>
 
             <h1 class="hero__title">
-              Hi, I'm Julfikar.<br />
-              I build <span class="hero__accent">fullstack</span><br />
-              web &amp; mobile products.
+              <span class="hero__greeting">Hi, I'm Julfikar</span>
+              <span class="hero__role">Fullstack <span class="hero__accent">Web &amp; Mobile</span> Developer</span>
             </h1>
 
             <p class="hero__lede">
-              Independent developer based in Mataram, Indonesia — designing and engineering
-              end-to-end digital products with care for both interface and infrastructure.
+              Spesialis dalam pengembangan aplikasi lintas platform menggunakan
+              <strong>Laravel</strong> dan <strong>Flutter</strong> &middot; menciptakan
+              solusi teknologi yang inovatif dan efisien.
             </p>
 
             <div class="hero__actions">
-              <a href="#work" class="btn btn--primary">See my work</a>
-              <a href="#contact" class="btn btn--ghost">Start a project</a>
+              <a href="#projects" class="btn btn--primary">
+                <span>Lihat Proyek Saya</span>
+                <i class="bx bx-right-arrow-alt"></i>
+              </a>
+              <a href="assets/cv.pdf" class="btn btn--ghost" download>
+                <i class="bx bx-download"></i>
+                <span>Unduh CV</span>
+              </a>
             </div>
 
             <div class="hero__stats">
               <div class="stat">
+                <span class="stat__num" data-count="3">0</span>
+                <span class="stat__plus">+</span>
+                <span class="stat__label">Tahun pengalaman</span>
+              </div>
+              <div class="stat">
                 <span class="stat__num" data-count="15">0</span>
                 <span class="stat__plus">+</span>
-                <span class="stat__label">Projects shipped</span>
-              </div>
-              <div class="stat">
-                <span class="stat__num" data-count="2">0</span>
-                <span class="stat__plus">+</span>
-                <span class="stat__label">Years experience</span>
-              </div>
-              <div class="stat">
-                <span class="stat__num" data-count="4">0</span>
-                <span class="stat__plus">+</span>
-                <span class="stat__label">Core technologies</span>
+                <span class="stat__label">Proyek terkirim</span>
               </div>
             </div>
           </div>
@@ -99,119 +105,17 @@
             <div class="hero__portrait">
               <img src="assets/img/jul.jpeg" alt="Portrait of Julfikar" />
             </div>
-            <span class="hero__chip hero__chip--1">React</span>
             <span class="hero__chip hero__chip--1" aria-label="React"><i class="bx bxl-react"></i></span>
             <span class="hero__chip hero__chip--2" aria-label="PHP / Laravel"><i class="bx bxl-php"></i></span>
             <span class="hero__chip hero__chip--3" aria-label="Flutter"><i class="bx bxl-flutter"></i></span>
             <span class="hero__chip hero__chip--4" aria-label="Tailwind CSS"><i class="bx bxl-tailwind-css"></i></span>
           </div>
         </div>
-
-        <div class="hero__scroll" aria-hidden="true">
-          <span></span>
-        </div>
       </section>
 
-      <!-- Work -->
-      <section class="section work" id="work">
-        <div class="container">
-          <header class="section__head work__head" data-reveal>
-            <div>
-              <span class="section__eyebrow">— Selected work</span>
-              <h2 class="section__title">Recent <em>projects</em></h2>
-              <p class="section__desc">
-                Three projects spanning civic tech, real-time data, and consumer travel.
-              </p>
-            </div>
-            <a href="#contact" class="work__more">
-              <span>Have a project?</span>
-              <span aria-hidden="true">→</span>
-            </a>
-          </header>
-
-          <ol class="projects">
-            <li class="project" data-reveal>
-              <a href="#" class="project__row">
-                <span class="project__num">01</span>
-                <div class="project__media">
-                  <img src="assets/img/vecqo.png" alt="VECQO 2024 — voter verification system" />
-                  <div class="project__overlay">
-                    <span class="project__cta">View case study <span aria-hidden="true">↗</span></span>
-                  </div>
-                </div>
-                <div class="project__body">
-                  <h3 class="project__title">VECQO 2024</h3>
-                  <p class="project__text">
-                    Voter &amp; supporter data verification system for the 2024 regional
-                    elections — with auditable workflows and role-based access.
-                  </p>
-                  <ul class="project__tags">
-                    <li>Web app</li>
-                    <li>Laravel</li>
-                    <li>Civic tech</li>
-                  </ul>
-                </div>
-                <span class="project__year">2024</span>
-                <span class="project__arrow" aria-hidden="true">↗</span>
-              </a>
-            </li>
-
-            <li class="project" data-reveal>
-              <a href="#" class="project__row">
-                <span class="project__num">02</span>
-                <div class="project__media">
-                  <img src="assets/img/rq.png" alt="RQ PILKADA 2024 — real-time quick count" />
-                  <div class="project__overlay">
-                    <span class="project__cta">View case study <span aria-hidden="true">↗</span></span>
-                  </div>
-                </div>
-                <div class="project__body">
-                  <h3 class="project__title">RQ PILKADA 2024</h3>
-                  <p class="project__text">
-                    Real-time quick count and vote-security platform — live dashboards,
-                    geospatial visualization, and tamper-evident reporting.
-                  </p>
-                  <ul class="project__tags">
-                    <li>Real-time</li>
-                    <li>React</li>
-                    <li>Data viz</li>
-                  </ul>
-                </div>
-                <span class="project__year">2024</span>
-                <span class="project__arrow" aria-hidden="true">↗</span>
-              </a>
-            </li>
-
-            <li class="project" data-reveal>
-              <a href="#" class="project__row">
-                <span class="project__num">03</span>
-                <div class="project__media">
-                  <img src="assets/img/kerja1.png" alt="Lombok Travel — mobile travel companion" />
-                  <div class="project__overlay">
-                    <span class="project__cta">View case study <span aria-hidden="true">↗</span></span>
-                  </div>
-                </div>
-                <div class="project__body">
-                  <h3 class="project__title">Lombok Travel</h3>
-                  <p class="project__text">
-                    A travel companion for exploring Lombok — curated destinations, offline
-                    maps, and a booking flow tuned for mobile-first users.
-                  </p>
-                  <ul class="project__tags">
-                    <li>Mobile</li>
-                    <li>Flutter</li>
-                    <li>Travel</li>
-                  </ul>
-                </div>
-                <span class="project__year">2024</span>
-                <span class="project__arrow" aria-hidden="true">↗</span>
-              </a>
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <!-- About -->
+      <!-- =============================================
+           ABOUT
+           ============================================= -->
       <section class="section about" id="about">
         <div class="container about__grid">
           <div class="about__media" data-reveal>
@@ -221,198 +125,477 @@
           </div>
 
           <div class="about__content" data-reveal>
-            <span class="section__eyebrow">— About me</span>
-            <h2 class="section__title">Developer with a <em>designer's</em> eye.</h2>
+            <span class="section__eyebrow">&middot; About me</span>
+            <h2 class="section__title">Developer with a <em>systems</em> mindset.</h2>
 
             <p class="about__text">
-              I'm Julfikar — a computer-science graduate from
-              <strong>Bumigora University Mataram</strong>, specializing in intelligent
-              systems. I work at the intersection of design and engineering, building
-              interfaces that feel as good as they function.
+              Saya adalah lulusan <strong>S1 Ilmu Komputer dari Universitas Bumigora</strong> dengan fokus pada intelligent systems.
+              Saya memiliki pengalaman kuat
+              dalam membangun ekosistem digital &middot; mulai dari arsitektur backend hingga
+              antarmuka pengguna (UI) mobile.
             </p>
 
             <p class="about__text">
-              During a one-month internship at the
-              <strong>National Narcotics Agency of West Nusa Tenggara</strong>,
-              I contributed to internal web apps and system maintenance — sharpening
-              my eye for real-world product quality.
+              Dengan pemahaman tambahan di bidang <strong>Machine Learning</strong> dan
+              <strong>React JS</strong>, saya berfokus pada analisis sistem yang mendalam
+              dan pemeliharaan aplikasi jangka panjang. Saya menikmati proses mengubah
+              masalah kompleks menjadi produk yang sederhana dan bermanfaat.
             </p>
 
             <ul class="about__list">
-              <li><span class="about__list-label">Based in</span>Mataram, Indonesia</li>
-              <li><span class="about__list-label">Experience</span>2+ years</li>
-              <li><span class="about__list-label">Languages</span>Indonesian, English</li>
+              <li>
+                <span class="about__list-label">Based in</span>
+                Mataram, Indonesia
+              </li>
+              <li>
+                <span class="about__list-label">Education</span>
+                S1 Ilmu Komputer &middot; Universitas Bumigora
+              </li>
+              <li>
+                <span class="about__list-label">Focus</span>
+                Laravel &middot; Flutter &middot; System Analysis
+              </li>
+              <li>
+                <span class="about__list-label">Languages</span>
+                Indonesian, English
+              </li>
             </ul>
           </div>
         </div>
       </section>
 
-      <!-- Skills -->
+      <!-- =============================================
+           SKILLS &middot; categorized
+           ============================================= -->
       <section class="section skills" id="skills">
         <div class="container">
           <header class="section__head" data-reveal>
-            <span class="section__eyebrow">— Capabilities</span>
-            <h2 class="section__title">Skills &amp; <em>stack</em></h2>
+            <span class="section__eyebrow">&middot; Capabilities</span>
+            <h2 class="section__title">Tech stack &amp; <em>skills</em></h2>
             <p class="section__desc">
-              A focused stack I've spent the last couple of years sharpening across real
-              client work.
+              Teknologi yang saya gunakan sehari-hari untuk membangun produk digital
+              yang handal, scalable, dan modern.
             </p>
           </header>
 
-          <div class="skills__grid" data-reveal>
-            <article class="skill">
-              <div class="skill__head">
-                <div class="skill__icon skill__icon--react">
-                  <i class="bx bxl-react"></i>
+          <div class="skills__categories">
+            <article class="skillcat" data-reveal>
+              <div class="skillcat__head">
+                <div class="skillcat__icon">
+                  <i class="bx bx-server"></i>
                 </div>
-                <div>
-                  <h3 class="skill__name">React</h3>
-                  <span class="skill__caption">Frontend library</span>
-                </div>
+                <h3 class="skillcat__title">Backend &amp; Web</h3>
               </div>
+              <p class="skillcat__desc">
+                Optimasi kode, manajemen database MySQL, relasi Eloquent, dan RESTful API
+                yang bersih dan terstruktur.
+              </p>
+              <ul class="skillcat__items">
+                <li><i class="bx bxl-php"></i>Laravel</li>
+                <li><i class="bx bx-code-alt"></i>PHP Native</li>
+                <li><i class="bx bx-data"></i>MySQL</li>
+                <li><i class="bx bx-network-chart"></i>RESTful API</li>
+              </ul>
             </article>
 
-            <article class="skill">
-              <div class="skill__head">
-                <div class="skill__icon skill__icon--laravel">
-                  <i class="bx bxl-php"></i>
+            <article class="skillcat" data-reveal>
+              <div class="skillcat__head">
+                <div class="skillcat__icon">
+                  <i class="bx bx-mobile-alt"></i>
                 </div>
-                <div>
-                  <h3 class="skill__name">Laravel</h3>
-                  <span class="skill__caption">PHP framework</span>
-                </div>
+                <h3 class="skillcat__title">Mobile &amp; Frontend</h3>
               </div>
+              <p class="skillcat__desc">
+                Aplikasi mobile cross-platform dengan performa native, dan antarmuka web
+                modern berbasis komponen.
+              </p>
+              <ul class="skillcat__items">
+                <li><i class="bx bxl-flutter"></i>Flutter</li>
+                <li><i class="bx bxl-react"></i>React JS</li>
+                <li><i class="bx bxl-tailwind-css"></i>Tailwind CSS</li>
+                <li><i class="bx bx-palette"></i>Figma</li>
+              </ul>
             </article>
 
-            <article class="skill">
-              <div class="skill__head">
-                <div class="skill__icon skill__icon--php">
-                  <i class="bx bxl-php"></i>
+            <article class="skillcat" data-reveal>
+              <div class="skillcat__head">
+                <div class="skillcat__icon">
+                  <i class="bx bx-cog"></i>
                 </div>
-                <div>
-                  <h3 class="skill__name">PHP</h3>
-                  <span class="skill__caption">Server-side</span>
-                </div>
+                <h3 class="skillcat__title">Infrastructure &amp; Tools</h3>
               </div>
+              <p class="skillcat__desc">
+                Version control, containerization, dan konfigurasi environment pada server
+                Ubuntu maupun Windows.
+              </p>
+              <ul class="skillcat__items">
+                <li><i class="bx bxl-git"></i>Git</li>
+                <li><i class="bx bx-box"></i>Podman / Containers</li>
+                <li><i class="bx bxl-redhat"></i>Red Hat OpenShift</li>
+                <li><i class="bx bx-terminal"></i>Ubuntu / Windows Server</li>
+              </ul>
             </article>
 
-            <article class="skill">
-              <div class="skill__head">
-                <div class="skill__icon skill__icon--flutter">
-                  <i class="bx bxl-flutter"></i>
+            <article class="skillcat" data-reveal>
+              <div class="skillcat__head">
+                <div class="skillcat__icon">
+                  <i class="bx bx-brain"></i>
                 </div>
-                <div>
-                  <h3 class="skill__name">Flutter</h3>
-                  <span class="skill__caption">Cross-platform mobile</span>
-                </div>
+                <h3 class="skillcat__title">Konsep Tambahan</h3>
               </div>
-            </article>
-
-            <article class="skill">
-              <div class="skill__head">
-                <div class="skill__icon skill__icon--ts">
-                  <i class="bx bxl-typescript"></i>
-                </div>
-                <div>
-                  <h3 class="skill__name">TypeScript</h3>
-                  <span class="skill__caption">Type-safe JavaScript</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="skill">
-              <div class="skill__head">
-                <div class="skill__icon skill__icon--tailwind">
-                  <i class="bx bxl-tailwind-css"></i>
-                </div>
-                <div>
-                  <h3 class="skill__name">Tailwind CSS</h3>
-                  <span class="skill__caption">Utility-first CSS</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="skill">
-              <div class="skill__head">
-                <div class="skill__icon skill__icon--node">
-                  <i class="bx bxl-nodejs"></i>
-                </div>
-                <div>
-                  <h3 class="skill__name">Node.js</h3>
-                  <span class="skill__caption">JavaScript runtime</span>
-                </div>
-              </div>
-            </article>
-
-            <article class="skill">
-              <div class="skill__head">
-                <div class="skill__icon skill__icon--postgres">
-                  <i class="bx bx-data"></i>
-                </div>
-                <div>
-                  <h3 class="skill__name">PostgreSQL</h3>
-                  <span class="skill__caption">Relational database</span>
-                </div>
-              </div>
+              <p class="skillcat__desc">
+                Pemahaman analitis yang membantu memecahkan masalah dari sudut pandang
+                yang berbeda.
+              </p>
+              <ul class="skillcat__items">
+                <li><i class="bx bx-brain"></i>Machine Learning basics</li>
+                <li><i class="bx bx-analyse"></i>Analisis Sistem</li>
+                <li><i class="bx bx-git-branch"></i>Versioning</li>
+              </ul>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- Contact -->
+      <!-- =============================================
+           WORK EXPERIENCE
+           ============================================= -->
+      <section class="section experience" id="experience">
+        <div class="container">
+          <header class="section__head" data-reveal>
+            <span class="section__eyebrow">&middot; Career path</span>
+            <h2 class="section__title">Work <em>experience</em></h2>
+            <p class="section__desc">
+              Perjalanan profesional saya di berbagai industri &middot; dari rumah sakit,
+              portal berita, hingga teknologi politik.
+            </p>
+          </header>
+
+          <ol class="experience__list">
+            <li class="experience__item" data-reveal>
+              <div class="experience__period">
+                <span class="experience__year">Sep 2025</span>
+                <span class="experience__status">Saat Ini</span>
+              </div>
+              <div class="experience__card">
+                <div class="experience__head">
+                  <h3 class="experience__title">Programmer</h3>
+                  <h4 class="experience__company">Rumah Sakit Mutiara Sukma</h4>
+                </div>
+                <p class="experience__desc">
+                  Membangun dan mengelola Sistem Informasi Rumah Sakit serta sistem
+                  kebutuhan internal &middot; dari arsitektur backend hingga aplikasi mobile.
+                </p>
+                <ul class="experience__achievements">
+                  <li>Kolaborator pada repositori GitHub utama instansi (websiteRSJMS)</li>
+                  <li>Mengelola proses publishing, verifikasi metadata, dan versioning aplikasi medis di Google Play Console</li>
+                  <li>Membangun sistem internal untuk operasional rumah sakit</li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="experience__item" data-reveal>
+              <div class="experience__period">
+                <span class="experience__year">Nov 2024 &middot; Jun 2025</span>
+                <span class="experience__status">8 bulan</span>
+              </div>
+              <div class="experience__card">
+                <div class="experience__head">
+                  <h3 class="experience__title">Fullstack Web Developer / Staff IT</h3>
+                  <h4 class="experience__company">Towa News</h4>
+                </div>
+                <p class="experience__desc">
+                  Membangun, mengembangkan, dan mengelola website portal berita
+                  perusahaan &middot; memastikan performa optimal untuk keterlibatan audiens.
+                </p>
+                <ul class="experience__achievements">
+                  <li>Membangun dan mengelola website portal berita Towa News end-to-end</li>
+                  <li>Menganalisis performa platform untuk optimasi keterlibatan audiens</li>
+                  <li>Mengelola infrastruktur teknis sebagai Staff IT</li>
+                </ul>
+              </div>
+            </li>
+
+            <li class="experience__item" data-reveal>
+              <div class="experience__period">
+                <span class="experience__year">Jan &middot; Nov 2024</span>
+                <span class="experience__status">11 bulan</span>
+              </div>
+              <div class="experience__card">
+                <div class="experience__head">
+                  <h3 class="experience__title">Fullstack Web Developer</h3>
+                  <h4 class="experience__company">Cyber Protocol &middot; Pilkada</h4>
+                </div>
+                <p class="experience__desc">
+                  Merancang, menyediakan, dan mengelola website sistem perhitungan suara
+                  untuk seluruh calon kepala daerah partai Gerindra di Nusa Tenggara Barat.
+                </p>
+                <ul class="experience__achievements">
+                  <li>Membangun platform perhitungan suara real-time untuk Pilkada 2024</li>
+                  <li>Bekerja langsung dengan klien untuk memastikan kebutuhan sistem terpenuhi selama masa kontrak</li>
+                  <li>Mengelola deployment untuk banyak calon secara paralel</li>
+                </ul>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- =============================================
+           PROJECTS SHOWCASE
+           ============================================= -->
+      <section class="section projects-section" id="projects">
+        <div class="container">
+          <header class="section__head" data-reveal>
+            <span class="section__eyebrow">&middot; Selected projects</span>
+            <h2 class="section__title">Project <em>showcase</em></h2>
+            <p class="section__desc">
+              Studi kasus dari proyek yang pernah saya kerjakan &middot; dari sistem kesehatan,
+              election tech, hingga aplikasi kasir.
+            </p>
+          </header>
+
+          <div class="showcase">
+            <!-- Featured: Hospital -->
+            <article class="showcase__item showcase__item--featured" data-reveal>
+              <a href="#" class="showcase__link">
+                <div class="showcase__media">
+                  <div class="showcase__placeholder showcase__placeholder--hospital">
+                    <i class="bx bx-plus-medical"></i>
+                  </div>
+                </div>
+                <div class="showcase__body">
+                  <span class="showcase__tag">Healthcare &middot; Mobile</span>
+                  <h3 class="showcase__title">Sistem Layanan RS Mutiara Sukma</h3>
+                  <p class="showcase__desc">
+                    Aplikasi mobile dan sistem internal untuk operasional rumah sakit &middot;
+                    terintegrasi penuh dengan Google Play Console untuk distribusi ke
+                    pengguna medis.
+                  </p>
+                  <ul class="showcase__tags">
+                    <li>Flutter</li>
+                    <li>Laravel</li>
+                    <li>MySQL</li>
+                    <li>Google Play</li>
+                  </ul>
+                </div>
+              </a>
+            </article>
+
+            <!-- Featured: POS -->
+            <article class="showcase__item showcase__item--featured" data-reveal>
+              <a href="#" class="showcase__link">
+                <div class="showcase__media">
+                  <div class="showcase__placeholder showcase__placeholder--pos">
+                    <i class="bx bx-cart-alt"></i>
+                  </div>
+                </div>
+                <div class="showcase__body">
+                  <span class="showcase__tag">Mobile &middot; POS</span>
+                  <h3 class="showcase__title">Aplikasi POS Kasir Coffeeshop</h3>
+                  <p class="showcase__desc">
+                    Aplikasi kasir lintas platform untuk coffeeshop &middot; manajemen pesanan,
+                    cetak struk (invoice), dan integrasi database real-time.
+                  </p>
+                  <ul class="showcase__tags">
+                    <li>Flutter</li>
+                    <li>SQLite</li>
+                    <li>Bluetooth Printer</li>
+                  </ul>
+                </div>
+              </a>
+            </article>
+
+            <!-- Election: VECQO -->
+            <article class="showcase__item" data-reveal>
+              <a href="#" class="showcase__link">
+                <div class="showcase__media">
+                  <img src="assets/img/vecqo.png" alt="VECQO 2024" />
+                </div>
+                <div class="showcase__body">
+                  <span class="showcase__tag">Web &middot; Politics</span>
+                  <h3 class="showcase__title">VECQO 2024</h3>
+                  <p class="showcase__desc">
+                    Voter &amp; supporter data verification system untuk Pilkada 2024 &middot;
+                    auditable workflows dan role-based access.
+                  </p>
+                </div>
+              </a>
+            </article>
+
+            <!-- Election: RQ -->
+            <article class="showcase__item" data-reveal>
+              <a href="#" class="showcase__link">
+                <div class="showcase__media">
+                  <img src="assets/img/rq.png" alt="RQ PILKADA 2024" />
+                </div>
+                <div class="showcase__body">
+                  <span class="showcase__tag">Real-time &middot; Data</span>
+                  <h3 class="showcase__title">RQ PILKADA 2024</h3>
+                  <p class="showcase__desc">
+                    Real-time quick count &amp; vote-security platform &middot; live dashboards
+                    dan geospatial visualization.
+                  </p>
+                </div>
+              </a>
+            </article>
+
+            <!-- SI-Diklat -->
+            <article class="showcase__item" data-reveal>
+              <a href="#" class="showcase__link">
+                <div class="showcase__media">
+                  <div class="showcase__placeholder showcase__placeholder--edu">
+                    <i class="bx bx-book-reader"></i>
+                  </div>
+                </div>
+                <div class="showcase__body">
+                  <span class="showcase__tag">Web &middot; Education</span>
+                  <h3 class="showcase__title">SI-Diklat</h3>
+                  <p class="showcase__desc">
+                    Sistem Informasi Pendidikan &amp; Pelatihan &middot; platform diklat
+                    dengan profil, modul, dan pelacakan sertifikasi.
+                  </p>
+                </div>
+              </a>
+            </article>
+
+            <!-- Billing System -->
+            <article class="showcase__item" data-reveal>
+              <a href="#" class="showcase__link">
+                <div class="showcase__media">
+                  <div class="showcase__placeholder showcase__placeholder--billing">
+                    <i class="bx bx-receipt"></i>
+                  </div>
+                </div>
+                <div class="showcase__body">
+                  <span class="showcase__tag">Web &middot; Automation</span>
+                  <h3 class="showcase__title">Billing System Otomatis</h3>
+                  <p class="showcase__desc">
+                    Sistem tagihan &amp; pembayaran otomatis &middot; menunjukkan kemampuan
+                    logika backend yang kompleks dan integrasi payment gateway.
+                  </p>
+                </div>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================
+           EDUCATION & ORGANIZATION
+           ============================================= -->
+      <section class="section eduorg" id="education">
+        <div class="container">
+          <div class="eduorg__grid">
+            <div class="eduorg__col" data-reveal>
+              <span class="section__eyebrow">&middot; Education &amp; certification</span>
+              <h2 class="section__title">Akademik &amp; <em>sertifikasi</em></h2>
+
+              <ol class="edu-list">
+                <li class="edu-item">
+                  <div class="edu-item__period">2020 &middot; 2024</div>
+                  <div class="edu-item__body">
+                    <h3>S1 Ilmu Komputer</h3>
+                    <h4>Universitas Bumigora</h4>
+
+                    <p class="edu-item__desc">
+                      Fokus pada intelligent systems dan pengembangan aplikasi.
+                    </p>
+                  </div>
+                </li>
+
+                <li class="edu-item">
+                  <div class="edu-item__period">2024</div>
+                  <div class="edu-item__body">
+                    <h3>Red Hat OpenShift Development I (DO188)</h3>
+                    <h4>Introduction to Containers with Podman</h4>
+                    <p class="edu-item__desc">
+                      Sertifikasi resmi Red Hat untuk containerization dengan Podman
+                      dan dasar OpenShift.
+                    </p>
+                  </div>
+                </li>
+              </ol>
+            </div>
+
+            <div class="eduorg__col" data-reveal>
+              <span class="section__eyebrow">&middot; Community &amp; media</span>
+              <h2 class="section__title">Organisasi &amp; <em>publikasi</em></h2>
+
+              <ul class="org-list">
+                <li class="org-item">
+                  <div class="org-item__period">2022 &middot; 2023</div>
+                  <h3>Google Developer Student Club (GDSC)</h3>
+                  <p class="org-item__role">Divisi Media / Medkominfo</p>
+                  <p class="org-item__desc">
+                    Aktif mengelola konten dan komunikasi komunitas developer mahasiswa
+                    Universitas Bumigora.
+                  </p>
+                </li>
+
+                <li class="org-item">
+                  <div class="org-item__period">2022 &middot; 2023</div>
+                  <h3>Programming Community Universitas Bumigora</h3>
+                  <p class="org-item__role">Divisi PSDM</p>
+                  <p class="org-item__desc">
+                    Pengembangan sumber daya anggota dan kegiatan komunitas programming
+                    di lingkungan kampus.
+                  </p>
+                </li>
+
+
+                <li class="org-item">
+                  <div class="org-item__period">Magang</div>
+                  <h3>Humas BNNP NTB</h3>
+                  <p class="org-item__role">Pengelolaan Podcast</p>
+                  <p class="org-item__desc">
+                    Mengelola produksi dan konten podcast selama magang di Badan
+                    Narkotika Nasional Provinsi NTB.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =============================================
+           CONTACT
+           ============================================= -->
       <section class="section contact" id="contact">
         <div class="container">
           <div class="contact__card" data-reveal>
             <div class="contact__head">
-              <span class="section__eyebrow">— Get in touch</span>
+              <span class="section__eyebrow">&middot; Get in touch</span>
               <h2 class="section__title">Let's build <em>something</em> great.</h2>
               <p class="contact__lede">
-                Have an idea or a brief? Send a message and I'll get back to you within
-                a day — most often within an hour.
+                Punya proyek, ide, atau sekadar ingin berdiskusi? Kirim pesan dan saya
+                akan balas dalam 1 hari &middot; sering kali dalam hitungan jam.
               </p>
             </div>
 
             <form class="form" id="contactForm">
               <div class="form__row">
                 <div class="form__field">
-                  <input
-                    type="text"
-                    id="nameInput"
-                    class="form__input"
-                    placeholder=" "
-                    autocomplete="name"
-                    required
-                  />
+                  <input type="text" id="nameInput" class="form__input" placeholder=" " autocomplete="name" required />
                   <label for="nameInput" class="form__label">Your name</label>
                 </div>
                 <div class="form__field">
-                  <input
-                    type="tel"
-                    id="whatsappInput"
-                    class="form__input"
-                    placeholder=" "
-                    autocomplete="tel"
-                    required
-                  />
+                  <input type="tel" id="whatsappInput" class="form__input" placeholder=" " autocomplete="tel" required />
                   <label for="whatsappInput" class="form__label">WhatsApp number</label>
                 </div>
               </div>
               <div class="form__field">
-                <textarea
-                  id="messageInput"
-                  class="form__input form__textarea"
-                  rows="5"
-                  placeholder=" "
-                  required
-                ></textarea>
+                <textarea id="messageInput" class="form__input form__textarea" rows="5" placeholder=" " required></textarea>
                 <label for="messageInput" class="form__label">Tell me about your project</label>
               </div>
               <div class="form__actions">
                 <button type="button" class="btn btn--primary" id="sendButton">
-                  Send via WhatsApp
+                  <span>Send via WhatsApp</span>
+                  <i class="bx bxl-whatsapp"></i>
                 </button>
                 <span class="form__note">
-                  or email <a href="mailto:julfikarbumigora166@gmail.com">julfikarbumigora166@gmail.com</a>
+                  atau email <a href="mailto:julfikarbumigora166@gmail.com">julfikarbumigora166@gmail.com</a>
                 </span>
               </div>
             </form>
@@ -453,7 +636,7 @@
             <span class="logo__name">ulfikar</span>
           </a>
           <p class="footer__tagline">
-            Independent fullstack developer — building thoughtful products.
+            Fullstack Web &amp; Mobile Developer &middot; building thoughtful products.
           </p>
         </div>
 
@@ -461,9 +644,10 @@
           <div class="footer__col">
             <span class="footer__label">Sitemap</span>
             <ul>
-              <li><a href="#work">Work</a></li>
               <li><a href="#about">About</a></li>
               <li><a href="#skills">Skills</a></li>
+              <li><a href="#experience">Experience</a></li>
+              <li><a href="#projects">Projects</a></li>
               <li><a href="#contact">Contact</a></li>
             </ul>
           </div>
@@ -485,7 +669,7 @@
         </div>
 
         <div class="footer__bottom">
-          <p>© 2026 Julfikar. All rights reserved.</p>
+          <p>&middot; 2026 Julfikar. All rights reserved.</p>
           <p>Built with care in Mataram, Indonesia.</p>
         </div>
       </div>
