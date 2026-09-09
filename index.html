@@ -3,201 +3,488 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Julfikar — Fullstack developer & product engineer based in Mataram, Indonesia." />
 
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
-    <!-- =====BOX ICONS===== -->
-    <link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
-
-    <title>Portofolio Julfikar</title>
+    <title>Julfikar — Fullstack Developer</title>
   </head>
   <body>
-    <!--===== HEADER =====-->
-    <header class="l-header">
-      <nav class="nav bd-grid">
-        <div>
-          <a href="#" class="nav__logo">Julfikar</a>
-        </div>
+    <!-- Scroll progress -->
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
-        <div class="nav__menu" id="nav-menu">
+    <!-- Header -->
+    <header class="header" id="header">
+      <div class="container header__row">
+        <a href="#home" class="logo" aria-label="Julfikar home">
+          <span class="logo__square">J</span>
+          <span class="logo__name">ulfikar</span>
+        </a>
+
+        <nav class="nav" id="nav" aria-label="Primary">
           <ul class="nav__list">
-            <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
-            <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
-            <li class="nav__item"><a href="#skills" class="nav__link">Skills</a></li>
-            <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
-            <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+            <li><a href="#work" class="nav__link">Work</a></li>
+            <li><a href="#about" class="nav__link">About</a></li>
+            <li><a href="#skills" class="nav__link">Skills</a></li>
+            <li><a href="#contact" class="nav__link">Contact</a></li>
           </ul>
-        </div>
+        </nav>
 
-        <div class="nav__toggle" id="nav-toggle">
-          <i class="bx bx-menu"></i>
-        </div>
-      </nav>
+        <a href="#contact" class="header__cta">
+          <span class="header__cta-dot"></span>
+          <span>Available for work</span>
+        </a>
+
+        <button class="burger" id="burger" aria-label="Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </header>
 
-    <main class="l-main">
-      <!--===== HOME =====-->
-      <section class="home bd-grid" id="home">
-        <div class="home__data">
-          <h1 class="home__title">
-            Hi,<br />I'am <span class="home__title-color">Julfikar</span><br />
-            <span>FullStack</span> <span class="home__title-color">Developer</span>
-          </h1>
+    <main>
+      <!-- Hero -->
+      <section class="hero" id="home">
+        <div class="container hero__grid">
+          <div class="hero__content" data-reveal>
+            <span class="hero__badge">
+              <span class="hero__badge-dot"></span>
+              Open to projects · 2026
+            </span>
 
-          <a href="#" class="button">Contact</a>
-        </div>
+            <h1 class="hero__title">
+              Hi, I'm Julfikar.<br />
+              I build <span class="hero__accent">fullstack</span><br />
+              web &amp; mobile products.
+            </h1>
 
-        <div class="home__social">
-          <a href="https://www.linkedin.com/in/jul-fikar-06260927a/" class="home__social-icon"><i class="bx bxl-linkedin"></i></a>
-          <a href="" class="home__social-icon"><i class="bx bxl-behance"></i></a>
-          <a href="" class="home__social-icon"><i class="bx bxl-github"></i></a>
-        </div>
-
-        <div class="home__img">
-          <svg class="home__blob" viewBox="0 0 479 467" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <mask id="mask0" mask-type="alpha">
-              <path
-                d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"
-              />
-            </mask>
-            <g mask="url(#mask0)">
-              <path
-                d="M9.19024 145.964C34.0253 76.5814 114.865 54.7299 184.111 29.4823C245.804 6.98884 311.86 -14.9503 370.735 14.143C431.207 44.026 467.948 107.508 477.191 174.311C485.897 237.229 454.931 294.377 416.506 344.954C373.74 401.245 326.068 462.801 255.442 466.189C179.416 469.835 111.552 422.137 65.1576 361.805C17.4835 299.81 -17.1617 219.583 9.19024 145.964Z"
-              />
-              <image class="home__blob-img" x="80" y="80" href="assets/img/fikar.png" />
-            </g>
-          </svg>
-        </div>
-      </section>
-
-      <!--===== ABOUT =====-->
-      <section class="about section" id="about">
-        <h2 class="section-title">About</h2>
-
-        <div class="about__container bd-grid">
-          <div class="about__img">
-            <img src="assets/img/kar.jpg" alt="" />
-          </div>
-
-          <div>
-            <h2 class="about__subtitle">I'am Fikar</h2>
-            <p class="about__text">
-              Graduated from Bumigora University Mataram with a major in Computer Science, focusing on intelligent systems. Possesses excellent time management skills and consistently completes tasks before deadlines. Experienced in an
-              internship at the National Narcotics Agency of West Nusa Tenggara Province for 1 month, where tasks included website development, application creation, and system maintenance.
+            <p class="hero__lede">
+              Independent developer based in Mataram, Indonesia — designing and engineering
+              end-to-end digital products with care for both interface and infrastructure.
             </p>
-          </div>
-        </div>
-      </section>
 
-      <!--===== SKILLS =====-->
-      <section class="skills section" id="skills">
-        <h2 class="section-title">Skills</h2>
+            <div class="hero__actions">
+              <a href="#work" class="btn btn--primary">See my work</a>
+              <a href="#contact" class="btn btn--ghost">Start a project</a>
+            </div>
 
-        <div class="skills__container bd-grid">
-          <div>
-            <h2 class="skills__subtitle">Skills Mastered</h2>
-            <p class="skills__text">Here are some skills that I have mastered and regularly use in my work as a Fullstack Developer.</p>
-            <div class="skills__data">
-              <div class="skills__names">
-                <img src="assets/img/react.png" alt="Laravel Logo" class="skills__icon" width="40" />
-                <span class="skills__name">React</span>
+            <div class="hero__stats">
+              <div class="stat">
+                <span class="stat__num" data-count="15">0</span>
+                <span class="stat__plus">+</span>
+                <span class="stat__label">Projects shipped</span>
               </div>
-              <div class="skills__bar skills__html"></div>
-              <div>
-                <span class="skills__percentage">95%</span>
+              <div class="stat">
+                <span class="stat__num" data-count="2">0</span>
+                <span class="stat__plus">+</span>
+                <span class="stat__label">Years experience</span>
               </div>
-            </div>
-            <div class="skills__data">
-              <div class="skills__names">
-                <img src="assets/img/laravel.png" alt="Laravel Logo" class="skills__icon" width="40" />
-                <span class="skills__name">Laravel</span>
-              </div>
-              <div class="skills__bar skills__css"></div>
-              <div>
-                <span class="skills__percentage">85%</span>
-              </div>
-            </div>
-            <div class="skills__data">
-              <div class="skills__names">
-                <img src="assets/img/php.png" alt="Laravel Logo" class="skills__icon" width="40" />
-                <span class="skills__name">PHP</span>
-              </div>
-              <div class="skills__bar skills__html"></div>
-              <div>
-                <span class="skills__percentage">95%</span>
-              </div>
-            </div>
-            <div class="skills__data">
-              <div class="skills__names">
-                <img src="assets/img/flutter.png" alt="Laravel Logo" class="skills__icon" width="40" />
-                <span class="skills__name">Flutter</span>
-              </div>
-              <div class="skills__bar skills__ux"></div>
-              <div>
-                <span class="skills__percentage">85%</span>
+              <div class="stat">
+                <span class="stat__num" data-count="4">0</span>
+                <span class="stat__plus">+</span>
+                <span class="stat__label">Core technologies</span>
               </div>
             </div>
           </div>
 
-          <div>
-            <img src="assets/img/ikar.png" alt="" class="skills__img" />
+          <div class="hero__media">
+            <div class="hero__portrait">
+              <img src="assets/img/jul.jpeg" alt="Portrait of Julfikar" />
+            </div>
+            <span class="hero__chip hero__chip--1">React</span>
+            <span class="hero__chip hero__chip--1" aria-label="React"><i class="bx bxl-react"></i></span>
+            <span class="hero__chip hero__chip--2" aria-label="PHP / Laravel"><i class="bx bxl-php"></i></span>
+            <span class="hero__chip hero__chip--3" aria-label="Flutter"><i class="bx bxl-flutter"></i></span>
+            <span class="hero__chip hero__chip--4" aria-label="Tailwind CSS"><i class="bx bxl-tailwind-css"></i></span>
+          </div>
+        </div>
+
+        <div class="hero__scroll" aria-hidden="true">
+          <span></span>
+        </div>
+      </section>
+
+      <!-- Work -->
+      <section class="section work" id="work">
+        <div class="container">
+          <header class="section__head work__head" data-reveal>
+            <div>
+              <span class="section__eyebrow">— Selected work</span>
+              <h2 class="section__title">Recent <em>projects</em></h2>
+              <p class="section__desc">
+                Three projects spanning civic tech, real-time data, and consumer travel.
+              </p>
+            </div>
+            <a href="#contact" class="work__more">
+              <span>Have a project?</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </header>
+
+          <ol class="projects">
+            <li class="project" data-reveal>
+              <a href="#" class="project__row">
+                <span class="project__num">01</span>
+                <div class="project__media">
+                  <img src="assets/img/vecqo.png" alt="VECQO 2024 — voter verification system" />
+                  <div class="project__overlay">
+                    <span class="project__cta">View case study <span aria-hidden="true">↗</span></span>
+                  </div>
+                </div>
+                <div class="project__body">
+                  <h3 class="project__title">VECQO 2024</h3>
+                  <p class="project__text">
+                    Voter &amp; supporter data verification system for the 2024 regional
+                    elections — with auditable workflows and role-based access.
+                  </p>
+                  <ul class="project__tags">
+                    <li>Web app</li>
+                    <li>Laravel</li>
+                    <li>Civic tech</li>
+                  </ul>
+                </div>
+                <span class="project__year">2024</span>
+                <span class="project__arrow" aria-hidden="true">↗</span>
+              </a>
+            </li>
+
+            <li class="project" data-reveal>
+              <a href="#" class="project__row">
+                <span class="project__num">02</span>
+                <div class="project__media">
+                  <img src="assets/img/rq.png" alt="RQ PILKADA 2024 — real-time quick count" />
+                  <div class="project__overlay">
+                    <span class="project__cta">View case study <span aria-hidden="true">↗</span></span>
+                  </div>
+                </div>
+                <div class="project__body">
+                  <h3 class="project__title">RQ PILKADA 2024</h3>
+                  <p class="project__text">
+                    Real-time quick count and vote-security platform — live dashboards,
+                    geospatial visualization, and tamper-evident reporting.
+                  </p>
+                  <ul class="project__tags">
+                    <li>Real-time</li>
+                    <li>React</li>
+                    <li>Data viz</li>
+                  </ul>
+                </div>
+                <span class="project__year">2024</span>
+                <span class="project__arrow" aria-hidden="true">↗</span>
+              </a>
+            </li>
+
+            <li class="project" data-reveal>
+              <a href="#" class="project__row">
+                <span class="project__num">03</span>
+                <div class="project__media">
+                  <img src="assets/img/kerja1.png" alt="Lombok Travel — mobile travel companion" />
+                  <div class="project__overlay">
+                    <span class="project__cta">View case study <span aria-hidden="true">↗</span></span>
+                  </div>
+                </div>
+                <div class="project__body">
+                  <h3 class="project__title">Lombok Travel</h3>
+                  <p class="project__text">
+                    A travel companion for exploring Lombok — curated destinations, offline
+                    maps, and a booking flow tuned for mobile-first users.
+                  </p>
+                  <ul class="project__tags">
+                    <li>Mobile</li>
+                    <li>Flutter</li>
+                    <li>Travel</li>
+                  </ul>
+                </div>
+                <span class="project__year">2024</span>
+                <span class="project__arrow" aria-hidden="true">↗</span>
+              </a>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section class="section about" id="about">
+        <div class="container about__grid">
+          <div class="about__media" data-reveal>
+            <div class="about__photo">
+              <img src="assets/img/about.jpeg" alt="Julfikar" />
+            </div>
+          </div>
+
+          <div class="about__content" data-reveal>
+            <span class="section__eyebrow">— About me</span>
+            <h2 class="section__title">Developer with a <em>designer's</em> eye.</h2>
+
+            <p class="about__text">
+              I'm Julfikar — a computer-science graduate from
+              <strong>Bumigora University Mataram</strong>, specializing in intelligent
+              systems. I work at the intersection of design and engineering, building
+              interfaces that feel as good as they function.
+            </p>
+
+            <p class="about__text">
+              During a one-month internship at the
+              <strong>National Narcotics Agency of West Nusa Tenggara</strong>,
+              I contributed to internal web apps and system maintenance — sharpening
+              my eye for real-world product quality.
+            </p>
+
+            <ul class="about__list">
+              <li><span class="about__list-label">Based in</span>Mataram, Indonesia</li>
+              <li><span class="about__list-label">Experience</span>2+ years</li>
+              <li><span class="about__list-label">Languages</span>Indonesian, English</li>
+            </ul>
           </div>
         </div>
       </section>
 
-      <!--===== WORK =====-->
-      <section class="work section" id="work">
-        <h2 class="section-title">Work</h2>
+      <!-- Skills -->
+      <section class="section skills" id="skills">
+        <div class="container">
+          <header class="section__head" data-reveal>
+            <span class="section__eyebrow">— Capabilities</span>
+            <h2 class="section__title">Skills &amp; <em>stack</em></h2>
+            <p class="section__desc">
+              A focused stack I've spent the last couple of years sharpening across real
+              client work.
+            </p>
+          </header>
 
-        <div class="work__container bd-grid">
-          <a href="" class="work__img">
-            <img src="assets/img/vecqo.png" alt="" />
-            <h1 class="text-center home__title-color">VECQO 2024</h1>
-            <p class="home__title-color">Sistem Verifikasi Data Pemilih Dan Pendukung PILKADA 2024</p>
-          </a>
-          <a href="" class="work__img">
-            <img src="assets/img/rq.png" alt="" />
-            <h1 class="text-center home__title-color">RQ PILKADA 2024</h1>
-            <p class="home__title-color">Sistem Real Quick Count Dan Pengamanan Suara PILKADA 2024</p>
-          </a>
-          <a href="" class="work__img">
-            <img src="assets/img/kerja1.png" alt="" />
-            <h1 class="text-center home__title-color">LOMBOK TRAVEL APP</h1>
-            <p class="home__title-color">Aplikasi Travel Destinasi Pulau Lombok</p>
-          </a>
+          <div class="skills__grid" data-reveal>
+            <article class="skill">
+              <div class="skill__head">
+                <div class="skill__icon skill__icon--react">
+                  <i class="bx bxl-react"></i>
+                </div>
+                <div>
+                  <h3 class="skill__name">React</h3>
+                  <span class="skill__caption">Frontend library</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="skill">
+              <div class="skill__head">
+                <div class="skill__icon skill__icon--laravel">
+                  <i class="bx bxl-php"></i>
+                </div>
+                <div>
+                  <h3 class="skill__name">Laravel</h3>
+                  <span class="skill__caption">PHP framework</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="skill">
+              <div class="skill__head">
+                <div class="skill__icon skill__icon--php">
+                  <i class="bx bxl-php"></i>
+                </div>
+                <div>
+                  <h3 class="skill__name">PHP</h3>
+                  <span class="skill__caption">Server-side</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="skill">
+              <div class="skill__head">
+                <div class="skill__icon skill__icon--flutter">
+                  <i class="bx bxl-flutter"></i>
+                </div>
+                <div>
+                  <h3 class="skill__name">Flutter</h3>
+                  <span class="skill__caption">Cross-platform mobile</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="skill">
+              <div class="skill__head">
+                <div class="skill__icon skill__icon--ts">
+                  <i class="bx bxl-typescript"></i>
+                </div>
+                <div>
+                  <h3 class="skill__name">TypeScript</h3>
+                  <span class="skill__caption">Type-safe JavaScript</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="skill">
+              <div class="skill__head">
+                <div class="skill__icon skill__icon--tailwind">
+                  <i class="bx bxl-tailwind-css"></i>
+                </div>
+                <div>
+                  <h3 class="skill__name">Tailwind CSS</h3>
+                  <span class="skill__caption">Utility-first CSS</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="skill">
+              <div class="skill__head">
+                <div class="skill__icon skill__icon--node">
+                  <i class="bx bxl-nodejs"></i>
+                </div>
+                <div>
+                  <h3 class="skill__name">Node.js</h3>
+                  <span class="skill__caption">JavaScript runtime</span>
+                </div>
+              </div>
+            </article>
+
+            <article class="skill">
+              <div class="skill__head">
+                <div class="skill__icon skill__icon--postgres">
+                  <i class="bx bx-data"></i>
+                </div>
+                <div>
+                  <h3 class="skill__name">PostgreSQL</h3>
+                  <span class="skill__caption">Relational database</span>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
-      <!--===== CONTACT =====-->
-      <section class="contact section" id="contact">
-        <h2 class="section-title">Contact</h2>
+      <!-- Contact -->
+      <section class="section contact" id="contact">
+        <div class="container">
+          <div class="contact__card" data-reveal>
+            <div class="contact__head">
+              <span class="section__eyebrow">— Get in touch</span>
+              <h2 class="section__title">Let's build <em>something</em> great.</h2>
+              <p class="contact__lede">
+                Have an idea or a brief? Send a message and I'll get back to you within
+                a day — most often within an hour.
+              </p>
+            </div>
 
-        <div class="contact__container bd-grid">
-          <form action="" class="contact__form" id="contactForm">
-            <input type="text" placeholder="Name" class="contact__input" id="nameInput" />
-            <input type="number" placeholder="Whatsapp Number" class="contact__input" id="whatsappInput" />
-            <textarea name="" id="messageInput" cols="0" rows="10" class="contact__input"></textarea>
-            <input type="button" value="Kirim" class="contact__button button" id="sendButton" />
-          </form>
+            <form class="form" id="contactForm">
+              <div class="form__row">
+                <div class="form__field">
+                  <input
+                    type="text"
+                    id="nameInput"
+                    class="form__input"
+                    placeholder=" "
+                    autocomplete="name"
+                    required
+                  />
+                  <label for="nameInput" class="form__label">Your name</label>
+                </div>
+                <div class="form__field">
+                  <input
+                    type="tel"
+                    id="whatsappInput"
+                    class="form__input"
+                    placeholder=" "
+                    autocomplete="tel"
+                    required
+                  />
+                  <label for="whatsappInput" class="form__label">WhatsApp number</label>
+                </div>
+              </div>
+              <div class="form__field">
+                <textarea
+                  id="messageInput"
+                  class="form__input form__textarea"
+                  rows="5"
+                  placeholder=" "
+                  required
+                ></textarea>
+                <label for="messageInput" class="form__label">Tell me about your project</label>
+              </div>
+              <div class="form__actions">
+                <button type="button" class="btn btn--primary" id="sendButton">
+                  Send via WhatsApp
+                </button>
+                <span class="form__note">
+                  or email <a href="mailto:hello@julfikar.dev">hello@julfikar.dev</a>
+                </span>
+              </div>
+            </form>
+
+            <ul class="contact__links">
+              <li>
+                <a href="https://www.linkedin.com/in/jul-fikar-06260927a/" target="_blank" rel="noopener">
+                  LinkedIn <span aria-hidden="true">↗</span>
+                </a>
+              </li>
+              <li>
+                <a href="#">GitHub <span aria-hidden="true">↗</span></a>
+              </li>
+              <li>
+                <a href="#">Instagram <span aria-hidden="true">↗</span></a>
+              </li>
+              <li>
+                <a href="tel:+6285333169606">+62 853 3316 9606 <span aria-hidden="true">↗</span></a>
+              </li>
+            </ul>
+          </div>
         </div>
       </section>
     </main>
 
-    <!--===== FOOTER =====-->
+    <!-- Footer -->
     <footer class="footer">
-      <p class="footer__title">Julfikar</p>
-      <div class="footer__social">
-        <a href="#" class="footer__icon"><i class="bx bxl-facebook"></i></a>
-        <a href="#" class="footer__icon"><i class="bx bxl-instagram"></i></a>
-        <a href="#" class="footer__icon"><i class="bx bxl-twitter"></i></a>
+      <div class="container footer__inner">
+        <div class="footer__top">
+          <a href="#home" class="logo">
+            <span class="logo__square">J</span>
+            <span class="logo__name">ulfikar</span>
+          </a>
+          <p class="footer__tagline">
+            Independent fullstack developer — building thoughtful products.
+          </p>
+        </div>
+
+        <div class="footer__grid">
+          <div class="footer__col">
+            <span class="footer__label">Sitemap</span>
+            <ul>
+              <li><a href="#work">Work</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <span class="footer__label">Contact</span>
+            <ul>
+              <li><a href="mailto:hello@julfikar.dev">hello@julfikar.dev</a></li>
+              <li><a href="tel:+6285333169606">+62 853 3316 9606</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <span class="footer__label">Social</span>
+            <ul>
+              <li><a href="https://www.linkedin.com/in/jul-fikar-06260927a/" target="_blank" rel="noopener">LinkedIn</a></li>
+              <li><a href="#">GitHub</a></li>
+              <li><a href="#">Instagram</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p>© 2026 Julfikar. All rights reserved.</p>
+          <p>Built with care in Mataram, Indonesia.</p>
+        </div>
       </div>
-      <p class="footer__copy">&#169; My Portofolio By Fikar</p>
     </footer>
 
-    <!--===== SCROLL REVEAL =====-->
-    <script src="https://unpkg.com/scrollreveal"></script>
-
-    <!--===== MAIN JS =====-->
     <script src="assets/js/main.js"></script>
     <script>
       document.getElementById("sendButton").addEventListener("click", function () {
@@ -205,7 +492,11 @@
         var whatsappNumber = document.getElementById("whatsappInput").value;
         var message = document.getElementById("messageInput").value;
 
-        var whatsappURL = `https://api.whatsapp.com/send?phone=6285333169606&text=Nama: ${encodeURIComponent(name)}%0AWhatsapp Number: ${encodeURIComponent(whatsappNumber)}%0APesan: ${encodeURIComponent(message)}`;
+        var whatsappURL =
+          "https://api.whatsapp.com/send?phone=6285333169606" +
+          "&text=Nama: " + encodeURIComponent(name) +
+          "%0AWhatsapp Number: " + encodeURIComponent(whatsappNumber) +
+          "%0APesan: " + encodeURIComponent(message);
 
         window.open(whatsappURL, "_blank");
       });
