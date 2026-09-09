@@ -281,21 +281,21 @@
             <li class="experience__item" data-reveal>
               <div class="experience__period">
                 <span class="experience__year">Sep 2025</span>
-                <span class="experience__status">Saat Ini</span>
+                <span class="experience__status" data-i18n="exp.msukma.status">Saat Ini</span>
               </div>
               <div class="experience__card">
                 <div class="experience__head">
-                  <h3 class="experience__title">Programmer</h3>
-                  <h4 class="experience__company">Rumah Sakit Mutiara Sukma</h4>
+                  <h3 class="experience__title" data-i18n="exp.msukma.role">Programmer</h3>
+                  <h4 class="experience__company" data-i18n="exp.msukma.company">Rumah Sakit Mutiara Sukma</h4>
                 </div>
-                <p class="experience__desc">
+                <p class="experience__desc" data-i18n="exp.msukma.desc">
                   Membangun dan mengelola Sistem Informasi Rumah Sakit serta sistem
                   kebutuhan internal &middot; dari arsitektur backend hingga aplikasi mobile.
                 </p>
                 <ul class="experience__achievements">
-                  <li>Kolaborator pada repositori GitHub utama instansi (websiteRSJMS)</li>
-                  <li>Mengelola proses publishing, verifikasi metadata, dan versioning aplikasi medis di Google Play Console</li>
-                  <li>Membangun sistem internal untuk operasional rumah sakit</li>
+                  <li data-i18n="exp.msukma.a1">Kolaborator pada repositori GitHub utama instansi (websiteRSJMS)</li>
+                  <li data-i18n="exp.msukma.a2">Mengelola proses publishing, verifikasi metadata, dan versioning aplikasi medis di Google Play Console</li>
+                  <li data-i18n="exp.msukma.a3">Membangun sistem internal untuk operasional rumah sakit</li>
                 </ul>
               </div>
             </li>
@@ -364,19 +364,16 @@
           <div class="showcase">
             <!-- Featured: Hospital -->
             <article class="showcase__item showcase__item--featured" data-reveal>
-              <a href="#" class="showcase__link">
+              <a href="https://play.google.com/store/apps/details?id=com.sukma.sirs" target="_blank" rel="noopener noreferrer" class="showcase__link">
                 <div class="showcase__media">
-                  <div class="showcase__placeholder showcase__placeholder--hospital">
-                    <i class="bx bx-plus-medical"></i>
-                  </div>
+                  <img src="assets/img/ms1.png" alt="Mutiara Sukma By RSMS" />
                 </div>
                 <div class="showcase__body">
                   <span class="showcase__tag" data-i18n="proj.hospital.tag">Healthcare &middot; Mobile</span>
-                  <h3 class="showcase__title" data-i18n="proj.hospital.title">Sistem Layanan RS Mutiara Sukma</h3>
+                  <h3 class="showcase__title" data-i18n="proj.hospital.title">Mutiara Sukma By RSMS</h3>
                   <p class="showcase__desc" data-i18n="proj.hospital.desc">
-                    Aplikasi mobile dan sistem internal untuk operasional rumah sakit &middot;
-                    terintegrasi penuh dengan Google Play Console untuk distribusi ke
-                    pengguna medis.
+                    Aplikasi mobile Flutter yang telah dipublikasikan di Google Play &middot;
+                    sistem informasi rumah sakit terintegrasi untuk RS Mutiara Sukma NTB.
                   </p>
                   <ul class="showcase__tags">
                     <li>Flutter</li>
@@ -384,30 +381,30 @@
                     <li>MySQL</li>
                     <li>Google Play</li>
                   </ul>
+                  <span class="showcase__live-badge"><i class="bx bxl-play-store"></i> Live on Google Play</span>
                 </div>
               </a>
             </article>
 
-            <!-- Featured: POS -->
+            <!-- Featured: Towa News -->
             <article class="showcase__item showcase__item--featured" data-reveal>
-              <a href="#" class="showcase__link">
+              <a href="https://towa.co.id/" target="_blank" rel="noopener noreferrer" class="showcase__link">
                 <div class="showcase__media">
-                  <div class="showcase__placeholder showcase__placeholder--pos">
-                    <i class="bx bx-cart-alt"></i>
-                  </div>
+                  <img src="assets/img/tw.png" alt="Towa News" />
                 </div>
                 <div class="showcase__body">
-                  <span class="showcase__tag" data-i18n="proj.pos.tag">Mobile &middot; POS</span>
-                  <h3 class="showcase__title" data-i18n="proj.pos.title">Aplikasi POS Kasir Coffeeshop</h3>
+                  <span class="showcase__tag" data-i18n="proj.pos.tag">Web &middot; Media</span>
+                  <h3 class="showcase__title" data-i18n="proj.pos.title">Towa News</h3>
                   <p class="showcase__desc" data-i18n="proj.pos.desc">
-                    Aplikasi kasir lintas platform untuk coffeeshop &middot; manajemen pesanan,
-                    cetak struk (invoice), dan integrasi database real-time.
+                    Portal berita digital &middot; "Pengeras Suara Informasi" &middot;
+                    platform media modern untuk menyajikan berita terkini lintas kategori.
                   </p>
                   <ul class="showcase__tags">
-                    <li>Flutter</li>
-                    <li>SQLite</li>
-                    <li>Bluetooth Printer</li>
+                    <li>Laravel</li>
+                    <li>MySQL</li>
+                    <li>Web Portal</li>
                   </ul>
+                  <span class="showcase__live-badge"><i class="bx bx-globe"></i> Live · towa.co.id</span>
                 </div>
               </a>
             </article>
@@ -543,6 +540,31 @@
                       <span class="edu-item__tag">Podman</span>
                       <span class="edu-item__tag">OpenShift</span>
                       <span class="edu-item__tag">Containers</span>
+                    </div>
+                  </div>
+                </li>
+
+                <!-- Card: TTIS Microlearning -->
+                <li class="edu-item">
+                  <div class="edu-item__icon-wrap">
+                    <span class="edu-item__icon edu-item__icon--cert">
+                      <i class="bx bxs-shield-alt-2"></i>
+                    </span>
+                    <div class="edu-item__period">2026</div>
+                  </div>
+                  <div class="edu-item__body">
+                    <div class="edu-item__header">
+                      <h3 data-i18n="edu.ttis.name">Microlearning Pembentukan dan Pengelolaan TTIS</h3>
+                    </div>
+                    <h4 data-i18n="edu.ttis.sub">Urgensi dan Dasar Pembentukan TTIS &middot; Fasilitas Pelayanan Kesehatan</h4>
+                    <p class="edu-item__desc" data-i18n="edu.ttis.desc">
+                      Mengikuti pelatihan pembentukan dan pengelolaan Tim Tanggap Insiden Siber (TTIS) di Fasilitas Pelayanan Kesehatan, diselenggarakan oleh Balai Pelatihan Kesehatan Cikarang.
+                    </p>
+                    <div class="edu-item__tags">
+                      <span class="edu-item__tag">Cybersecurity</span>
+                      <span class="edu-item__tag">Incident Response</span>
+                      <span class="edu-item__tag">Kesehatan</span>
+                      <span class="edu-item__tag">TTIS</span>
                     </div>
                   </div>
                 </li>

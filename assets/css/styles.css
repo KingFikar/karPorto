@@ -1566,6 +1566,26 @@ body.lang-fade footer {
   color: var(--text-3);
 }
 
+.showcase__live-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: var(--s-2);
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(135deg, #34a853 0%, #1e7e34 100%);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(52, 168, 83, 0.35);
+}
+
+.showcase__live-badge i {
+  font-size: 0.85rem;
+}
+
 /* ====================================================
    10d. EDUCATION & ORGANIZATION
    ==================================================== */
