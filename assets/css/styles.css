@@ -378,6 +378,43 @@ button, input, textarea {
   overflow: hidden;
 }
 
+/* Hero grid background pattern */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.12) 1.5px, transparent 1.5px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1.5px, transparent 1.5px);
+  background-size: 48px 48px;
+  background-position: -1px -1px;
+  -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, #000 20%, transparent 90%);
+          mask-image: radial-gradient(ellipse 90% 80% at 50% 50%, #000 20%, transparent 90%);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Subtle accent glow at center */
+.hero > .container::before {
+  content: "";
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, var(--accent-soft) 0%, transparent 60%);
+  filter: blur(90px);
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+}
+
 @media (min-width: 768px) {
   .hero {
     padding-top: calc(64px + var(--s-8));
@@ -1345,25 +1382,30 @@ button, input, textarea {
 .contact__links a {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: var(--s-2);
-  padding: var(--s-4) var(--s-2);
-  font-size: 0.9375rem;
-  color: var(--text-2);
-  transition: color 0.2s var(--ease), padding 0.2s var(--ease);
+  justify-content: center;
+  padding: var(--s-5) var(--s-2);
+  transition: background 0.2s var(--ease);
 }
 
 .contact__links a:hover {
-  color: var(--accent);
-  padding-left: var(--s-4);
+  background: var(--surface);
 }
 
-.contact__links a span {
-  transition: transform 0.2s var(--ease);
+.contact__icon {
+  font-size: 1.65rem;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: transform 0.25s var(--ease);
 }
 
-.contact__links a:hover span {
-  transform: translate(3px, -3px);
+/* Brand colors for contact icons */
+.contact__links li:nth-child(1) .contact__icon { color: #0a66c2; } /* LinkedIn */
+.contact__links li:nth-child(2) .contact__icon { color: #ffffff; } /* GitHub */
+.contact__links li:nth-child(3) .contact__icon { color: #e1306c; } /* Instagram */
+.contact__links li:nth-child(4) .contact__icon { color: var(--accent); } /* Phone */
+
+.contact__links a:hover .contact__icon {
+  transform: scale(1.2);
 }
 
 /* ====================================================
@@ -1433,11 +1475,28 @@ button, input, textarea {
 }
 
 .footer__col ul a {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
   color: var(--text-2);
   transition: color 0.2s var(--ease);
 }
 
+.footer__col ul a i {
+  font-size: 1.0625rem;
+  line-height: 1;
+  transition: transform 0.2s var(--ease);
+}
+
 .footer__col ul a:hover { color: var(--accent); }
+
+.footer__col ul a:hover i {
+  transform: translateY(-1px);
+}
+
+.footer__col:nth-child(4) ul li:nth-child(1) a i { color: #0a66c2; }
+.footer__col:nth-child(4) ul li:nth-child(2) a i { color: #ffffff; }
+.footer__col:nth-child(4) ul li:nth-child(3) a i { color: #e1306c; }
 
 .footer__bottom {
   display: flex;
