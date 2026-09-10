@@ -17,6 +17,23 @@
     <title>Julfikar &middot; Fullstack Web & Mobile Developer</title>
   </head>
   <body>
+    <!-- Page Loader -->
+    <div id="page-loader">
+      <div class="loader__logo">
+        <span class="loader__logo-sq">J</span>
+      </div>
+      <div class="loader__bar-wrap">
+        <div class="loader__bar" id="loader-bar"></div>
+      </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div id="cursor-dot"></div>
+    <div id="cursor-ring"></div>
+
+    <!-- Particle background -->
+    <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
     <!-- Scroll progress -->
     <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
 
@@ -125,13 +142,13 @@
            ============================================= -->
       <section class="section about" id="about">
         <div class="container about__grid">
-          <div class="about__media" data-reveal>
+          <div class="about__media" data-reveal data-dir="left">
             <div class="about__photo">
               <img src="assets/img/about.jpeg" alt="Julfikar" />
             </div>
           </div>
 
-          <div class="about__content" data-reveal>
+          <div class="about__content" data-reveal data-dir="right">
             <span class="section__eyebrow" data-i18n="about.eyebrow">&middot; About me</span>
             <h2 class="section__title" data-i18n="about.title">Developer with a <em>systems</em> mindset.</h2>
 
@@ -422,6 +439,11 @@
                     Voter &amp; supporter data verification system untuk Pilkada 2024 &middot;
                     auditable workflows dan role-based access.
                   </p>
+                  <ul class="showcase__tags">
+                    <li>Laravel</li>
+                    <li>MySQL</li>
+                    <li>Bootstrap</li>
+                  </ul>
                 </div>
               </a>
             </article>
@@ -439,23 +461,32 @@
                     Real-time quick count &amp; vote-security platform &middot; live dashboards
                     dan geospatial visualization.
                   </p>
+                  <ul class="showcase__tags">
+                    <li>Laravel</li>
+                    <li>MySQL</li>
+                    <li>Bootstrap</li>
+                  </ul>
                 </div>
               </a>
             </article>
 
-            <!-- SI-Diklat -->
+            <!-- CLGovS -->
             <article class="showcase__item" data-reveal>
               <a href="https://clgovs.id/" target="_blank" rel="noopener noreferrer" class="showcase__link">
                 <div class="showcase__media">
-                  <img src="assets/img/perfil.png" alt="SI-Diklat" />
+                  <img src="assets/img/clg.png" alt="CLGovS" />
                 </div>
                 <div class="showcase__body">
-                  <span class="showcase__tag" data-i18n="proj.diklat.tag">Web &middot; Pendidikan</span>
-                  <h3 class="showcase__title">SI-Diklat</h3>
+                  <span class="showcase__tag" data-i18n="proj.diklat.tag">Web &middot; Riset &amp; Tata Kelola</span>
+                  <h3 class="showcase__title" data-i18n="proj.diklat.title">CLGovS</h3>
                   <p class="showcase__desc" data-i18n="proj.diklat.desc">
-                    Sistem Informasi Pendidikan &amp; Pelatihan · platform diklat
-                    dengan profil, modul, dan pelacakan sertifikasi.
+                    Lembaga riset kebijakan berbasis bukti &middot; konsultasi pemerintahan, pengembangan kapasitas, dan inovasi tata kelola untuk Indonesia.
                   </p>
+                  <ul class="showcase__tags">
+                    <li>Laravel</li>
+                    <li>MySQL</li>
+                    <li>Vue</li>
+                  </ul>
                   <span class="showcase__live-badge"><i class="bx bx-globe"></i> Live · clgovs.id</span>
                 </div>
               </a>

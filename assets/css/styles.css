@@ -2257,29 +2257,334 @@ body.lang-fade footer {
 }
 
 /* ====================================================
-   13. REVEAL ANIMATIONS
+   13. PAGE LOADER
+   ==================================================== */
+#page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1.75rem;
+  transition: opacity 0.65s var(--ease), visibility 0.65s;
+}
+#page-loader.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.loader__logo {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+.loader__logo-sq {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  background: var(--accent);
+  color: var(--bg);
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 1.5rem;
+}
+.loader__bar-wrap {
+  width: 160px;
+  height: 2px;
+  background: var(--line-2);
+  border-radius: 2px;
+  overflow: hidden;
+}
+.loader__bar {
+  height: 100%;
+  width: 0%;
+  background: var(--accent);
+  border-radius: 2px;
+  box-shadow: 0 0 10px var(--accent-glow);
+}
+
+/* ====================================================
+   13b. CUSTOM CURSOR
+   ==================================================== */
+#cursor-dot, #cursor-ring {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9996;
+  transform: translate(-50%, -50%);
+  top: -50px; left: -50px;
+}
+#cursor-dot {
+  width: 6px; height: 6px;
+  background: var(--accent);
+  transition: width .2s var(--ease), height .2s var(--ease), background .2s var(--ease);
+}
+#cursor-ring {
+  width: 34px; height: 34px;
+  border: 1.5px solid rgba(255,84,54,0.5);
+  transition: width .3s var(--ease), height .3s var(--ease), border-color .3s var(--ease);
+}
+body.cursor-hover #cursor-dot { width: 10px; height: 10px; background: #fff; }
+body.cursor-hover #cursor-ring { width: 54px; height: 54px; border-color: var(--accent); }
+@media (hover: none) { #cursor-dot, #cursor-ring { display: none !important; } }
+
+/* ====================================================
+   13c. PARTICLE CANVAS
+   ==================================================== */
+#particle-canvas {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.22;
+}
+
+/* ====================================================
+   13d. CINEMATIC REVEAL
    ==================================================== */
 [data-reveal] {
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
+  transform: translateY(52px);
+  transition: opacity .95s cubic-bezier(0.16,1,0.3,1), transform .95s cubic-bezier(0.16,1,0.3,1);
+}
+[data-reveal].is-revealed { opacity: 1; transform: translateY(0); }
+[data-reveal][data-dir="left"]  { transform: translateX(-60px); }
+[data-reveal][data-dir="left"].is-revealed  { transform: translateX(0); }
+[data-reveal][data-dir="right"] { transform: translateX(60px); }
+[data-reveal][data-dir="right"].is-revealed { transform: translateX(0); }
+[data-reveal][data-dir="scale"] { transform: scale(0.88) translateY(20px); }
+[data-reveal][data-dir="scale"].is-revealed { transform: scale(1) translateY(0); }
+
+/* ====================================================
+   13e. HERO ENTRANCE SEQUENCE
+   ==================================================== */
+@keyframes heroUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes heroScale {
+  from { opacity: 0; transform: scale(0.88) translateY(24px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+.hero__badge   { animation: heroUp    .75s cubic-bezier(0.16,1,0.3,1)  .1s both; }
+.hero__title   { animation: heroUp    .85s cubic-bezier(0.16,1,0.3,1) .28s both; }
+.hero__lede    { animation: heroUp    .85s cubic-bezier(0.16,1,0.3,1) .45s both; }
+.hero__actions { animation: heroUp    .85s cubic-bezier(0.16,1,0.3,1)  .6s both; }
+.hero__stats   { animation: heroUp    .85s cubic-bezier(0.16,1,0.3,1) .75s both; }
+.hero__media   { animation: heroScale 1.1s cubic-bezier(0.16,1,0.3,1)  .3s both; }
+
+/* ====================================================
+   13f. ORBIT GLOW on portrait
+   ==================================================== */
+@keyframes orbit {
+  from { transform: rotate(0deg) translateX(115%) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(115%) rotate(-360deg); }
+}
+.hero__portrait::after {
+  content: "";
+  position: absolute;
+  width: 11px; height: 11px;
+  top: calc(50% - 5.5px); left: calc(50% - 5.5px);
+  background: var(--accent);
+  border-radius: 50%;
+  box-shadow: 0 0 22px 7px var(--accent-glow);
+  animation: orbit 5s linear infinite;
+  pointer-events: none;
 }
 
-[data-reveal].is-revealed {
-  opacity: 1;
-  transform: translateY(0);
+/* ====================================================
+   13g. FLOATING BLOBS
+   ==================================================== */
+@keyframes blobFloat {
+  0%   { transform: translate(0,0)        scale(1);    }
+  33%  { transform: translate(-20px,-22px) scale(1.04); }
+  66%  { transform: translate(14px,-30px)  scale(0.97); }
+  100% { transform: translate(-28px,14px)  scale(1.06); }
 }
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 550px; height: 550px;
+  background: radial-gradient(circle, rgba(255,84,54,0.065) 0%, transparent 70%);
+  border-radius: 50%;
+  bottom: -160px; right: -120px;
+  z-index: 0; pointer-events: none;
+  animation: blobFloat 16s ease-in-out infinite alternate;
+}
+
+/* ====================================================
+   13h. SHIMMER on showcase media
+   ==================================================== */
+.showcase__media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(112deg, transparent 20%, rgba(255,255,255,0.1) 50%, transparent 80%);
+  background-size: 260% 100%;
+  background-position: 160% 0;
+  pointer-events: none;
+  transition: background-position 0s;
+}
+.showcase__item:hover .showcase__media::after {
+  background-position: -100% 0;
+  transition: background-position .7s cubic-bezier(0.16,1,0.3,1);
+}
+
+/* ====================================================
+   13i. 3D TILT CARDS
+   ==================================================== */
+.showcase__item {
+  transform-style: preserve-3d;
+  will-change: transform;
+  transition: border-color .3s var(--ease), transform .45s cubic-bezier(0.16,1,0.3,1), box-shadow .3s var(--ease);
+}
+.showcase__item:hover {
+  box-shadow: 0 28px 60px rgba(255,84,54,0.14), 0 8px 24px rgba(0,0,0,0.4);
+}
+
+/* ====================================================
+   13j. EXPERIENCE ACCENT LINE
+   ==================================================== */
+.experience__card {
+  position: relative;
+  overflow: hidden;
+}
+
+.experience__card::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 0; bottom: 0; width: 3px;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: transform .5s cubic-bezier(0.16,1,0.3,1);
+  border-radius: 0 2px 2px 0;
+  z-index: 1;
+}
+.experience__item:hover .experience__card::before { transform: scaleY(1); }
+
+/* ====================================================
+   13k. SKILL CHIPS
+   ==================================================== */
+.skillcat__items li {
+  transition: border-color .22s var(--ease), color .22s var(--ease),
+              background .22s var(--ease), transform .22s var(--ease), box-shadow .22s var(--ease);
+}
+.skillcat__items li:hover {
+  border-color: var(--accent); color: var(--accent);
+  background: var(--accent-soft);
+  transform: translateY(-3px) scale(1.06);
+  box-shadow: 0 4px 16px var(--accent-glow);
+}
+.skillcat {
+  transition: border-color .3s var(--ease), transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+.skillcat:hover {
+  border-color: rgba(255,84,54,0.3);
+  transform: translateY(-5px);
+  box-shadow: 0 14px 40px rgba(255,84,54,0.1);
+}
+
+/* ====================================================
+   13l. TYPING CURSOR
+   ==================================================== */
+.typing-cursor {
+  display: inline-block;
+  width: 3px; height: .85em;
+  background: var(--accent);
+  margin-left: 3px;
+  vertical-align: middle;
+  border-radius: 2px;
+  box-shadow: 0 0 8px var(--accent-glow);
+  animation: cursorBlink 1s step-end infinite;
+}
+@keyframes cursorBlink { 0%,100% { opacity:1; } 50% { opacity:0; } }
+
+/* ====================================================
+   13m. LIVE BADGE PING
+   ==================================================== */
+.showcase__live-badge { position: relative; overflow: visible; }
+.showcase__live-badge::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: var(--radius-pill);
+  background: inherit;
+  opacity: 0;
+  animation: badgePing 2.6s ease-out infinite;
+  z-index: -1;
+}
+@keyframes badgePing {
+  0%   { opacity: .55; transform: scale(1); }
+  100% { opacity: 0;   transform: scale(1.55); }
+}
+
+/* ====================================================
+   13n. STAT COUNTER POP
+   ==================================================== */
+@keyframes statPop {
+  0%   { transform: scale(1); }
+  45%  { transform: scale(1.2); color: var(--accent); }
+  100% { transform: scale(1); }
+}
+.stat__num.is-counted { animation: statPop .5s cubic-bezier(0.16,1,0.3,1) forwards; }
+
+/* ====================================================
+   13o. STAGGER CHILDREN
+   ==================================================== */
+.stagger-child {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity .75s cubic-bezier(0.16,1,0.3,1), transform .75s cubic-bezier(0.16,1,0.3,1);
+}
+.stagger-child.is-visible { opacity: 1; transform: translateY(0); }
+
+/* ====================================================
+   13p. EDU / ORG ITEM HOVER
+   ==================================================== */
+.edu-item {
+  transition: border-color .3s var(--ease), box-shadow .3s var(--ease), transform .3s var(--ease);
+}
+.edu-item:hover {
+  border-color: rgba(255,84,54,0.3);
+  box-shadow: 0 8px 32px rgba(255,84,54,0.08);
+  transform: translateY(-3px);
+}
+.org-item {
+  transition: border-color .3s var(--ease), box-shadow .3s var(--ease), transform .3s var(--ease);
+}
+.org-item:hover {
+  border-color: rgba(255,84,54,0.3);
+  box-shadow: 0 8px 32px rgba(255,84,54,0.08);
+  transform: translateY(-3px);
+}
+
+/* ====================================================
+   13q. SECTION HEAD cascade after reveal
+   ==================================================== */
+.section__head[data-reveal].is-revealed .section__eyebrow { animation: heroUp .6s cubic-bezier(0.16,1,0.3,1) 0s   both; }
+.section__head[data-reveal].is-revealed .section__title   { animation: heroUp .7s cubic-bezier(0.16,1,0.3,1) .12s both; }
+.section__head[data-reveal].is-revealed .section__desc    { animation: heroUp .7s cubic-bezier(0.16,1,0.3,1) .24s both; }
 
 /* ====================================================
    14. REDUCED MOTION
    ==================================================== */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+  [data-reveal], .stagger-child { opacity: 1; transform: none; }
 }
