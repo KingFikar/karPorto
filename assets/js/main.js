@@ -246,81 +246,125 @@
   });
 
   /* ──────────────────────────────────────────────────
-     8. PARTICLE CANVAS BACKGROUND
+     8. FLOWING GRID CANVAS BACKGROUND
+     - Diagonal grid lines that scroll forever
+     - Traveling glow pulses along the lines for a "data flowing" feel
   ────────────────────────────────────────────────── */
   const canvas = document.getElementById("particle-canvas");
   if (canvas) {
-    const ctx    = canvas.getContext("2d");
-    let W, H, particles;
+    const ctx = canvas.getContext("2d");
+    let W, H, dpr;
+    let offset = 0;        // diagonal flow offset (px)
+    let pulseTime = 0;     // pulses phase (0..1 looping)
 
+    const CELL = 80;                          // grid cell size in CSS px
+    const LINE_COLOR = "rgba(255, 84, 54, 0.75)";
     const resize = () => {
-      W = canvas.width  = window.innerWidth;
-      H = canvas.height = window.innerHeight;
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      W = canvas.width  = window.innerWidth  * dpr;
+      H = canvas.height = window.innerHeight * dpr;
+      canvas.style.width  = window.innerWidth  + "px";
+      canvas.style.height = window.innerHeight + "px";
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     };
 
-    const randomBetween = (a, b) => a + Math.random() * (b - a);
-
-    const createParticles = () => {
-      const count = Math.floor((W * H) / 14000);
-      particles = Array.from({ length: count }, () => ({
-        x:    randomBetween(0, W),
-        y:    randomBetween(0, H),
-        r:    randomBetween(0.6, 1.8),
-        vx:   randomBetween(-0.18, 0.18),
-        vy:   randomBetween(-0.18, 0.18),
-        alpha: randomBetween(0.2, 0.7),
-      }));
-    };
-
-    const drawLine = (p1, p2, dist, maxDist) => {
-      const opacity = (1 - dist / maxDist) * 0.25;
+    // Vertical grid lines, shifted by horizontal flow offset ox
+    const drawVerticals = (ox, oy, w, h) => {
+      ctx.strokeStyle = LINE_COLOR;
+      ctx.lineWidth = 1;
       ctx.beginPath();
-      ctx.moveTo(p1.x, p1.y);
-      ctx.lineTo(p2.x, p2.y);
-      ctx.strokeStyle = `rgba(255, 84, 54, ${opacity})`;
-      ctx.lineWidth   = 0.5;
+      for (let x = -CELL + ox; x < w + CELL; x += CELL) {
+        ctx.moveTo(x, -CELL + oy);
+        ctx.lineTo(x, h + CELL);
+      }
       ctx.stroke();
     };
 
-    const MAX_DIST = 120;
+    // Horizontal grid lines, shifted by vertical flow offset oy
+    const drawHorizontals = (ox, oy, w, h) => {
+      ctx.strokeStyle = LINE_COLOR;
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      for (let y = -CELL + oy; y < h + CELL; y += CELL) {
+        ctx.moveTo(-CELL + ox, y);
+        ctx.lineTo(w + CELL, y);
+      }
+      ctx.stroke();
+    };
+
+    // Glowing pulse traveling from (x1,y1) to (x2,y2); t is [0..1]
+    const drawPulse = (x1, y1, x2, y2, t) => {
+      const px = x1 + (x2 - x1) * t;
+      const py = y1 + (y2 - y1) * t;
+
+      // soft glow
+      const grad = ctx.createRadialGradient(px, py, 0, px, py, 32);
+      grad.addColorStop(0,   "rgba(255, 130, 90, 0.55)");
+      grad.addColorStop(0.4, "rgba(255, 84, 54, 0.18)");
+      grad.addColorStop(1,   "rgba(255, 84, 54, 0)");
+      ctx.fillStyle = grad;
+      ctx.beginPath();
+      ctx.arc(px, py, 32, 0, Math.PI * 2);
+      ctx.fill();
+
+      // bright core
+      ctx.fillStyle = "rgba(255, 200, 170, 0.95)";
+      ctx.beginPath();
+      ctx.arc(px, py, 2.2, 0, Math.PI * 2);
+      ctx.fill();
+    };
 
     const animate = () => {
-      ctx.clearRect(0, 0, W, H);
+      const w = W / dpr;
+      const h = H / dpr;
 
-      particles.forEach((p) => {
-        p.x += p.vx;
-        p.y += p.vy;
-        if (p.x < 0) p.x = W;
-        if (p.x > W) p.x = 0;
-        if (p.y < 0) p.y = H;
-        if (p.y > H) p.y = 0;
+      ctx.clearRect(0, 0, w, h);
 
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(255, 84, 54, ${p.alpha})`;
-        ctx.fill();
-      });
+      offset    += 0.35;   // diagonal flow speed (px/frame)
+      pulseTime += 0.011;  // pulse travel speed
 
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx   = particles[i].x - particles[j].x;
-          const dy   = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < MAX_DIST) drawLine(particles[i], particles[j], dist, MAX_DIST);
-        }
+      const ox = offset % CELL;
+      const oy = (offset * 0.6) % CELL; // Y flows a bit slower for a true diagonal feel
+
+      // 1) base flowing grid
+      drawVerticals(ox, oy, w, h);
+      drawHorizontals(ox, oy, w, h);
+
+      // 2) traveling pulses along every horizontal line
+      const visibleRows = Math.ceil(h / CELL) + 2;
+      const startY = -CELL + oy;
+      for (let i = 0; i < visibleRows; i++) {
+        const y = startY + i * CELL;
+        const phase = (pulseTime + i * 0.13) % 1;
+        drawPulse(-CELL + ox, y, w + CELL, y, phase);
       }
+
+      // 3) traveling pulses along every vertical line (different speed for variety)
+      const visibleCols = Math.ceil(w / CELL) + 2;
+      const startX = -CELL + ox;
+      for (let j = 0; j < visibleCols; j++) {
+        const x = startX + j * CELL;
+        const phase = (pulseTime * 0.8 + j * 0.17) % 1;
+        drawPulse(x, -CELL + oy, x, h + CELL, phase);
+      }
+
+      // 4) soft radial vignette so grid blends with content
+      const vg = ctx.createRadialGradient(
+        w / 2, h / 2, Math.min(w, h) * 0.3,
+        w / 2, h / 2, Math.max(w, h) * 0.75
+      );
+      vg.addColorStop(0, "rgba(0,0,0,0)");
+      vg.addColorStop(1, "rgba(0,0,0,0.45)");
+      ctx.fillStyle = vg;
+      ctx.fillRect(0, 0, w, h);
 
       requestAnimationFrame(animate);
     };
 
     resize();
-    createParticles();
     animate();
 
-    window.addEventListener("resize", () => {
-      resize();
-      createParticles();
-    }, { passive: true });
+    window.addEventListener("resize", resize, { passive: true });
   }
 
   /* ──────────────────────────────────────────────────
