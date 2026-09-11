@@ -2214,6 +2214,9 @@ body.lang-fade footer {
   }
 }
 
+@keyframes bxSpin { 0% { transform: rotate(0); } 100% { transform: rotate(360deg); } }
+.bx-spin { display: inline-block; animation: bxSpin 0.9s linear infinite; }
+
 /* ====================================================
    13. PAGE LOADER
    ==================================================== */

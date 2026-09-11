@@ -15,6 +15,7 @@
     />
 
     <title>Julfikar &middot; Fullstack Web & Mobile Developer</title>
+    <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
   </head>
   <body>
     <!-- Page Loader -->
@@ -105,10 +106,10 @@
                 <span data-i18n="hero.cta.view">Lihat Proyek Saya</span>
                 <i class="bx bx-right-arrow-alt"></i>
               </a>
-              <a href="assets/cv.pdf" class="btn btn--ghost" download>
+              <button type="button" id="cvDownload" class="btn btn--ghost">
                 <i class="bx bx-download"></i>
                 <span data-i18n="hero.cta.cv">Unduh CV</span>
-              </a>
+              </button>
             </div>
 
             <div class="hero__stats">
@@ -789,6 +790,7 @@
 
     <script src="assets/js/i18n.js"></script>
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/cv.js"></script>
     <script>
       document.getElementById("sendButton").addEventListener("click", function () {
         var name = document.getElementById("nameInput").value;
